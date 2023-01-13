@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Student update</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container my-5">
+    <h1 class="text-center">Student update <br><br/>
+        <a href="/" class="btn btn-danger text-right">Go Home</a>
+    </h1>
+    <hr>
+
+
+    <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="text" th:field="*{id}" placeholder="Student Id" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{name}" placeholder="Student Name" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{Maths}" placeholder="Maths marks" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{English}" placeholder="English marks" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{Science}" placeholder="Science marks" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{semester}" placeholder="Semester" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Update</button>
+    </form>
+
+    <hr>
+
+
+</div>
+</body>
+
+</html>
