@@ -4,6 +4,7 @@ import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.*;
 import co.elastic.clients.elasticsearch.core.search.Hit;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
@@ -71,13 +72,15 @@ public class ElasticSearchQuery {
         SearchRequest searchRequest = SearchRequest.of(s -> s.index(indexName));
         SearchResponse searchResponse = elasticsearchClient.search(searchRequest, Product.class);
         List<Hit> hits = searchResponse.hits().hits();
+
         List<Product> products = new ArrayList<>();
         for (Hit object : hits) {
 
-            System.out.print(((Product) object.source()));
+            //System.out.print(((Product) object.source()));
             products.add((Product) object.source());
 
         }
+
         return products;
     }
 }

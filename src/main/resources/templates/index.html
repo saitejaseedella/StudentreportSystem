@@ -61,12 +61,14 @@
         <tr th:each="productDocument : ${listProductDocuments}">
             <td th:text="${productDocument.id}"></td>
             <td th:text="${productDocument.name}"></td>
+            <td th:text="${productDocument.Maths}"></td>
             <td th:text="${productDocument.Science}"></td>
             <td th:text="${productDocument.English}"></td>
             <td th:text="${productDocument.semester}"></td>
-            <td th:text="${productDocument.action}"></td>
+            <td th:text="Action">
             <td>  <a th:href="@{/showFormForUpdate/{id}(id=${productDocument.id})}" class="btn btn-success">Update</a>
                 <a th:href="@{/deleteProduct/{id}(id=${productDocument.id})}" class="btn btn-danger">Delete</a>
+            </td>
             </td>
         </tr>
         </tbody>

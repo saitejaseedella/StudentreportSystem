@@ -19,16 +19,16 @@ public class UIController {
         return "index";
     }*/
 
-    @GetMapping("home")
+    @GetMapping("/")
     public String viewHomePage(Model model) throws IOException {
-        // model.addAttribute("listProductDocuments",elasticSearchQuery.searchAllDocuments());
+         model.addAttribute("listProductDocuments",elasticSearchQuery.searchAllDocuments());
         return "index";
     }
 
     @PostMapping("/saveProduct")
     public String saveProduct(@ModelAttribute("product") Product product) throws IOException {
         elasticSearchQuery.createOrUpdateDocument(product);
-        return "index";
+        return "redirect:/";
     }
 
     @GetMapping("/showFormForUpdate/{id}")
@@ -36,7 +36,7 @@ public class UIController {
 
         Product product = elasticSearchQuery.getDocumentById(id);
         model.addAttribute("product", product);
-        return "updateProductDocument";
+        return "UpdateStudent";
     }
 
     @GetMapping("/showNewProductForm")
@@ -44,7 +44,7 @@ public class UIController {
         // create model attribute to bind form data
         Product product = new Product();
         model.addAttribute("product", product);
-        return "newProductDocument";
+        return "AddStudent";
     }
 
     @GetMapping("/deleteProduct/{id}")
