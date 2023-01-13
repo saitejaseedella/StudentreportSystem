@@ -25,7 +25,7 @@ public class UIController {
         return "index";
     }
 
-    @PostMapping("/saveProduct")
+    @PostMapping("/saveStudent")
     public String saveProduct(@ModelAttribute("product") Product product) throws IOException {
         elasticSearchQuery.createOrUpdateDocument(product);
         return "redirect:/";
@@ -39,7 +39,7 @@ public class UIController {
         return "UpdateStudent";
     }
 
-    @GetMapping("/showNewProductForm")
+    @GetMapping("/showNewStudentForm")
     public String showNewEmployeeForm(Model model) {
         // create model attribute to bind form data
         Product product = new Product();
@@ -47,7 +47,7 @@ public class UIController {
         return "AddStudent";
     }
 
-    @GetMapping("/deleteProduct/{id}")
+    @GetMapping("/deleteStudent/{id}")
     public String deleteProduct(@PathVariable(value = "id") String id) throws IOException {
 
         this.elasticSearchQuery.deleteDocumentById(id);
