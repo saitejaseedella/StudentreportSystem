@@ -1,4 +1,4 @@
-package com.studentreport.system;
+package com.studentreport.system.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -29,5 +29,7 @@ public class Product {
     @Field(type = FieldType.Integer, name = "semester")
     private int semester;
 
+    @Field(type = FieldType.Integer, name = "average")
+    private int average;
 
 }

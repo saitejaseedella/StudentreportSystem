@@ -1,6 +1,8 @@
-package com.studentreport.system;
+package com.studentreport.system.api_controller;
 
 
+import com.studentreport.system.service.ElasticSearchQuery;
+import com.studentreport.system.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

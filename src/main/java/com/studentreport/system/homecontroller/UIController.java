@@ -1,5 +1,7 @@
-package com.studentreport.system;
+package com.studentreport.system.homecontroller;
 
+import com.studentreport.system.model.Product;
+import com.studentreport.system.service.ElasticSearchQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,4 +55,6 @@ public class UIController {
         this.elasticSearchQuery.deleteDocumentById(id);
         return "redirect:/";
     }
+
+
 }

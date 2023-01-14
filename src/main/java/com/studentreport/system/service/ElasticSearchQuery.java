@@ -1,14 +1,15 @@
-package com.studentreport.system;
+package com.studentreport.system.service;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.*;
 import co.elastic.clients.elasticsearch.core.search.Hit;
+import com.studentreport.system.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -74,10 +75,15 @@ public class ElasticSearchQuery {
         List<Hit> hits = searchResponse.hits().hits();
 
         List<Product> products = new ArrayList<>();
+
         for (Hit object : hits) {
 
-            //System.out.print(((Product) object.source()));
+            System.out.print(((Product) object.source()));
+
+
             products.add((Product) object.source());
+
+
 
         }
 
