@@ -28,7 +28,9 @@ public class ElasticSearchQuery {
                 .index(indexName)
                 .id(product.getId())
                 .document(product)
+
         );
+
         if (response.result().name().equals("Created")) {
             return new StringBuilder("Document has been successfully created.").toString();
         } else if (response.result().name().equals("Updated")) {
@@ -79,7 +81,7 @@ public class ElasticSearchQuery {
         for (Hit object : hits) {
 
             System.out.print(((Product) object.source()));
-
+            System.out.print(((Product) object.source()).getAverage()+"avggg");
 
             products.add((Product) object.source());
 
