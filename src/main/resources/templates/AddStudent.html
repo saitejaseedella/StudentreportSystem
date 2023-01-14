@@ -9,24 +9,68 @@
 
 <body>
 <div class="container my-5">
-    <h1 class="text-center">Student add<br><br/>
+    <h1 class="text-center">Add Student Marks<br><br/>
         <a href="/" class="btn btn-danger text-right">Go Home</a>
     </h1>
     <hr>
 
 
     <form action="#" th:action="@{/saveStudent}" th:object="${product}" method="POST">
-        <input type="text" th:field="*{id}" placeholder="Student Id" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{name}" placeholder="Student Name" class="form-control mb-4 col-4">
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Student ID </label>
+            <div class="col-sm-10">
+                <input  type="number" min="0" max="100" th:field="*{id}" placeholder="Student Id" class="form-control mb-4 col-4">
+            </div>
+        </div>
 
-        <input type="text" th:field="*{Maths}" placeholder="Maths marks" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{English}" placeholder="English marks" class="form-control mb-4 col-4">
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Student Name </label>
+            <div class="col-sm-10">
+                <input type="text" th:field="*{name}" placeholder="Student Name" class="form-control mb-4 col-4">
+            </div>
+        </div>
 
-        <input type="text" th:field="*{Science}" placeholder="Science marks" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{semester}" placeholder="Semester" class="form-control mb-4 col-4">
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Math Marks </label>
+            <div class="col-sm-10">
+                <input type="number" min="0" max="100" th:field="*{Maths}" placeholder="Math marks /100" class="form-control mb-4 col-4" >
+
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">English Marks </label>
+            <div class="col-sm-10">
+                <input type="number" min="0" max="100" th:field="*{English}" placeholder="English marks/100" class="form-control mb-4 col-4">
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Science Marks </label>
+            <div class="col-sm-10">
+                <input type="number" min="0" max="100" th:field="*{Science}" placeholder="Science marks/100" class="form-control mb-4 col-4">
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label" >Semester </label>
+            <div class="col-sm-10">
+                <input type="number" min="1" max="2" th:field="*{semester}" placeholder="Semester/2" class="form-control mb-4 col-4">
+
+            </div>
+        </div>
+
+
+
+
+
+
         <button type="submit" class="btn btn-info col-2">Add</button>
     </form>
 

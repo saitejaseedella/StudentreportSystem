@@ -47,6 +47,8 @@ public class ElasticSearchQuery {
                 Product.class
         );
 
+
+
         if (response.found()) {
             product = response.source();
             System.out.println("Product name " + product.getName());
